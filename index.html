@@ -91,7 +91,7 @@
 
     input.value = "";
 
-    const response = await fetch("https://n8n.tusmonet.com/webhook-test/website-chat", {      method: "POST",
+    const response = await fetch("https://n8n.tusmonet.com/webhook/nexttraders-chat", {      method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
@@ -100,9 +100,9 @@
       })
     });
 
-    const data = await response.json();
+    const data = await response.text();
 
-    messages.innerHTML += "<div><b>Bot:</b> " + data.output + "</div>";
+    messages.innerHTML += "<div><b>Bot:</b> " + data + "</div>";
     messages.scrollTop = messages.scrollHeight;
   }
 </script>
